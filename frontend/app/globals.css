@@ -37,7 +37,14 @@
 } */
 
 @layer utilities {
-    /* .text-balance {
-        text-wrap: balance;
-    } */
+    .header-text {
+        @apply 2xl:text-5xl xl:text-3xl lg:text-2xl text-xl font-extrabold capitalize text-black-color text-center;
+    }
+
+    .p-text {
+        @apply text-gray-color 2xl:text-[1.75rem] text-[0.8rem] text-left leading-6;
+    }
+    .title-text {
+        @apply text-black-color 2xl:text-3xl text-[1rem] text-left leading-6 font-extrabold;
+    }
 }

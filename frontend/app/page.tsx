@@ -1,5 +1,11 @@
-import Image from "next/image";
+import { About, Skills, Testimonials, Work } from "@/components";
 
 export default function Home() {
-    return <main className="h-[2000px]"></main>;
+    return (
+        <main>
+            <About />
+            <Work />
+            <Skills />
+        </main>
+    );
 }

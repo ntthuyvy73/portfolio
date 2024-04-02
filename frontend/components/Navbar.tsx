@@ -14,11 +14,11 @@ const Navbar = () => {
         <nav className="w-full fixed flex justify-between items-center py-4 px-8 bg-white-color/25 backdrop-blur-sm  border border-solid border-white-color/20 z-10 ">
             {/* logo */}
             <div className="relative w-40 h-10">
-                <Image
+                {/* <Image
                     src={images.logo}
                     alt="logo"
                     className="object-contain"
-                />
+                /> */}
             </div>
 
             {/* links */}

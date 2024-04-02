@@ -35,6 +35,8 @@ import nb from "/public/nb.png";
 import skype from "/public/skype.png";
 import spotify from "/public/spotify.png";
 
+import noImage from "/public/no-image.png";
+
 export default {
     email,
     mobile,
@@ -69,4 +71,5 @@ export default {
     nb,
     skype,
     spotify,
+    noImage,
 };
