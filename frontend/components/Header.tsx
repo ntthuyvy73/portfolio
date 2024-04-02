@@ -2,14 +2,15 @@
 import images from "@/constants/images";
 import Image from "next/image";
 import React from "react";
+import AppWrap from "./wrapper/AppWrap";
 
 const Skills = [images.javascript, images.sass, images.react];
 
 const Header = () => {
     return (
-        <div className="h-full flex py-24 px-8">
+        <div className="h-full w-full flex py-24 px-8">
             {/*left info */}
-            <div className="flex-[0.7] flex flex-col items-end gap-10 ">
+            <div className="flex-[0.7] flex flex-col items-end gap-10 my-20">
                 <div className="flex justify-end items-end bg-white-color rounded-lg py-4 px-8 shadow-xl ">
                     <span className="text-4xl">👋</span>
                     <div className="flex-1 text-xl" style={{ marginLeft: 20 }}>
@@ -17,19 +18,19 @@ const Header = () => {
                             Hello, I am
                         </p>
                         <h1 className="text-4xl font-extrabold text-center text-black-color capitalize">
-                            Micael
+                            Vy
                         </h1>
                     </div>
                 </div>
 
-                <div className="bg-white rounded-lg py-4 px-6 shadow-xl text-right text-lg leading-6 text-gray-color uppercase ">
+                <div className="bg-white rounded-lg py-4 px-6 shadow-xl text-right text-lg leading-6 text-gray-color uppercase mt-10">
                     <p>Web Developer</p>
                     <p className="mt-3">Freelancer</p>
                 </div>
             </div>
 
             {/* img */}
-            <div className="flex-1 flex justify-end w-full h-full">
+            <div className="relative flex-1 flex justify-end w-full h-[100vh]">
                 <Image
                     src={images.profile}
                     alt=""
@@ -43,7 +44,7 @@ const Header = () => {
                 {Skills.map((item, index) => (
                     <div
                         key={index}
-                        className="relative flex justify-center items-center w-20 h-20 bg-white-color rounded-full shadow-md "
+                        className="relative flex justify-center items-center w-20 h-20 bg-white-color rounded-full shadow-md cursor-pointer "
                     >
                         <Image
                             src={item}
@@ -58,4 +59,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default AppWrap( Header,"home");

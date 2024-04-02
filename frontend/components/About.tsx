@@ -5,6 +5,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import AppWrap from "./wrapper/AppWrap";
+import MotionWrap from "./wrapper/MotionWrap";
 
 const About = () => {
     const [abouts, setAbouts] = useState([]);
@@ -18,8 +19,8 @@ const About = () => {
     }, []);
 
     return (
-        <div className="flex flex-col justify-center items-center">
-            <h2 className="header-text">
+        <div className="flex flex-col justify-center items-center h-screen my-10">
+            <h2 className="header-text " style={{lineHeight:'3rem'}} >
                 I Know That{" "}
                 <span className="text-secondary-color">
                     Good Design <br />{" "}
@@ -38,7 +39,7 @@ const About = () => {
                         key={`about-${index}`}
                         className=" w-48 flex flex-col justify-center items-center m-8  "
                     >
-                        <div className="relative w-full 2xl:h-32 h-24 shadow-lg ">
+                        <div className="relative w-full h-48 shadow-lg ">
                             <Image
                                 src={
                                     item.imgUrl
@@ -59,4 +60,4 @@ const About = () => {
     );
 };
 
-export default AppWrap(About, "about");
+export default AppWrap(MotionWrap( About,""), "about","bg-white-color");

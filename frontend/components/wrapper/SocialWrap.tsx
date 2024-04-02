@@ -1,21 +1,24 @@
+import Link from "next/link";
 import React from "react";
 import { BsFacebook, BsTwitter } from "react-icons/bs";
 import { CiPhone } from "react-icons/ci";
+import { MdOutlineEmail } from "react-icons/md";
 
 const SocialWrap = () => {
     return (
-        <div className="ml-5 flex flex-col justify-start items-start gap-5 text-[2rem] text-secondary-color ">
-            <div className="socialItem">
-                <BsTwitter />
-            </div>
+        <div className="ml-5 mb-5 flex flex-col justify-end items-center gap-5 text-[2rem] text-secondary-color ">
+            <Link className="socialItem" href='mailto:ntthuyvy73@gmail.com'>
+                <MdOutlineEmail />
+            </Link>
 
-            <div className="socialItem">
+            {/* <div className="socialItem">
                 <BsFacebook />
-            </div>
+            </div> */}
 
-            <div className="socialItem">
+
+            <Link href="tel:+356203225" className="socialItem">
                 <CiPhone />
-            </div>
+            </Link>
         </div>
     );
 };

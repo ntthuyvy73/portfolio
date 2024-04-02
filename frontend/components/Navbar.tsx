@@ -3,12 +3,29 @@ import { Menu } from "@/constants";
 import images from "@/constants/images";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
+import { LinkContext } from "@/utils";
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false);
+    const [activeLink,setActiveLink] = useState("");
+    
+   const {curLink,setCurLink} =useContext(LinkContext);
+
+    useEffect(()=>{
+        if(curLink !== activeLink){
+            setActiveLink(curLink);
+       }
+        
+    },[curLink]);
+
+
+    const handleClick = (item)=>{
+        setActiveLink(item);
+        setCurLink(item);
+    }
 
     return (
         <nav className="w-full fixed flex justify-between items-center py-4 px-8 bg-white-color/25 backdrop-blur-sm  border border-solid border-white-color/20 z-10 ">
@@ -30,9 +47,12 @@ const Navbar = () => {
                     >
                         <div className="w-1 h-1 bg-transparent rounded-full group-hover:bg-secondary-color " />
                         <Link
-                            href={item.url}
-                            className="uppercase text-gray-color font-semibold group-hover:text-secondary-color transition-all duration-300 ease-in-out "
-                        >
+                            href={`#${item.url}`}
+                            className={`uppercase text-gray-color font-semibold group-hover:text-secondary-color transition-all duration-300 ease-in-out
+                            ${activeLink.toLowerCase() === item.url.toLowerCase() ? 'text-secondary-color' :'text-gray-color'}
+                            `}
+                            onClick={()=>handleClick(item.url)}
+                       >
                             {item.title}
                         </Link>
                     </li>

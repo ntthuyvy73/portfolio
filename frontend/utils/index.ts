@@ -1,5 +1,6 @@
 import { createClient } from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
+import { createContext } from "react";
 
 export const client = createClient({
     projectId: "mpninwyw",
@@ -12,3 +13,5 @@ export const client = createClient({
 const builder = imageUrlBuilder(client);
 
 export const getUrl = (source) => (source ? builder.image(source).url() : "");
+
+export const LinkContext = createContext();

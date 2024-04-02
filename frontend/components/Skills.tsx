@@ -19,8 +19,8 @@ const Skills = () => {
         });
 
         client.fetch(expQuery).then((data) => {
-            data.reverse(function (a, b) {
-                return a.year - b.year;
+            data.sort(function (a, b) {
+                return b.year - a.year;
             });
 
             setExperiences(data);
@@ -28,7 +28,7 @@ const Skills = () => {
     }, []);
 
     return (
-        <div className="mt-20">
+        <div className="py-20">
             <h2 className="header-text">Skills & Experiences</h2>
 
             <div className=" flex flex-col justify-center items-center gap-10 mt-10">
@@ -36,12 +36,12 @@ const Skills = () => {
                     <motion.div
                         whileHover={{ opacity: [0.5, 1] }}
                         transition={{
-                            duration: 0.3,
+                            duration: 0.25,
                             staggerChildren: 0.5,
                             ease: "easeInOut",
                         }}
                         key={`exp-${index}`}
-                        className="flex-1 flex justify-center items-center gap-10 hover:bg-gray-color/10 hover:shadow-xl p-5 rounded-xl cursor-pointer "
+                        className="flex-1 flex justify-center items-center gap-10 hover:bg-gray-color/10 hover:shadow-xl p-10 rounded-xl cursor-pointer "
                     >
                         <div
                             className="flex flex-col justify-center items-center text-center p-3 bg-white-color text-secondary-color text-xl font-extrabold
@@ -88,4 +88,4 @@ const Skills = () => {
     );
 };
 
-export default AppWrap(Skills, "skills");
+export default AppWrap(Skills, "skills",'bg-white-color/20');

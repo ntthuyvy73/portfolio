@@ -7,11 +7,13 @@ import "./AppWrap.scss";
 const AppWrap = (Component, idName, classes = "") =>
     function HOC() {
         return (
-            <div id={idName} className="flex justify-between items-center">
+            <div id={idName} className={`min-h-screen w-full flex ${classes}`}>
                 {/* social icons */}
                 <SocialWrap />
 
-                <Component />
+                <div className="flex-1">
+                    <Component />
+                </div>
 
                 {/* navigation */}
                 <NavigationDotsWrap idName={idName} />
